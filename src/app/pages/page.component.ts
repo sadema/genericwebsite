@@ -5,7 +5,7 @@ import { PageResolve } from './page.resolve';
 
 @Component({
 	template:`
-		<div generic-page [data]="pageData"></div>
+		<div generic-page [pagedata]="pageData"></div>
 	`
 })
 export class PageComponent {

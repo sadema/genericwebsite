@@ -6,7 +6,7 @@ import {Component, OnInit, Input} from '@angular/core';
     <h1>Test</h1>
     <div *ngFor="let content of pagecontent">
       <div>{{content | json}}</div>
-      <!-- <div generic-content [data]="content"></div> -->
+      <div generic-content [contentdata]="content"></div>
     </div>
   `,
   styleUrls: ['./defaultpage.component.css']

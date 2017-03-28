@@ -8,7 +8,7 @@ import {PageComponents} from './pages.module';
 export class GenericPageDirective {
 
 	@Input()
-	public data;
+	public pagedata;
 
 	constructor(
 		private vcRef: ViewContainerRef,
@@ -16,11 +16,11 @@ export class GenericPageDirective {
 	) { }
 
 	ngOnChanges(changes) {
-		if(this.data) {
+		if(this.pagedata) {
 			this.vcRef.clear();
-			const cf = this.cfResolver.resolveComponentFactory(PageComponents.find(component => component.ref === this.data.template));
+			const cf = this.cfResolver.resolveComponentFactory(PageComponents.find(component => component.ref === this.pagedata.template));
 			const component = this.vcRef.createComponent(cf);
-			component.instance['pagecontent'] = this.data.pagecontent;
+			component.instance['pagecontent'] = this.pagedata.pagecontent;
 		}
 	}
 }

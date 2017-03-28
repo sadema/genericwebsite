@@ -15,5 +15,11 @@ export const ContentComponents = [
   imports: [
     CommonModule
   ],
+  entryComponents:[
+    ContentComponents
+  ],
+  exports: [
+    GenericContentDirective
+  ]
 })
 export class ContentModule { }

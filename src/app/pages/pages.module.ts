@@ -14,6 +14,7 @@ import {PageResolve} from './page.resolve'
 import {CommerceModule} from '../commerce/commerce.module';
 import {SpotsModule} from '../spots/spots.module';
 import { DefaultpageComponent } from './defaultpage/defaultpage.component';
+import {ContentModule} from "../content/content.module";
 
 
 export const PageComponents = [
@@ -29,6 +30,7 @@ export {PageComponent} from './page.component';
 		...PageComponents,
 	],
 	imports:[
+    ContentModule,
 		SharedModule,
 		CommerceModule,
 		SpotsModule
