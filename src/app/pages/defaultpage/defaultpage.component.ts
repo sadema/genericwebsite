@@ -3,10 +3,10 @@ import {Component, OnInit, Input} from '@angular/core';
 @Component({
   selector: 'defaultpage',
   template:`
-    <h1>Test</h1>
-    <div *ngFor="let content of pagecontent">
-      <div>{{content | json}}</div>
-      <div generic-content [contentdata]="content"></div>
+    <div class="d-flex justify-content-sm-center justify-content-md-start flex-column flex-md-row" id="{{container.containername}}" *ngFor="let container of containers">
+      <div class="p-2" *ngFor="let content of container.content">
+        <div generic-content [contentdata]="content"></div>
+      </div>
     </div>
   `,
   styleUrls: ['./defaultpage.component.css']
@@ -16,7 +16,7 @@ export class DefaultpageComponent implements OnInit {
   static ref = 'Defaultpage'
 
   @Input()
-  public pagecontent;
+  public containers;
 
   constructor() { }
 

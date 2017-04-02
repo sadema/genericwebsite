@@ -20,7 +20,7 @@ export class GenericPageDirective {
 			this.vcRef.clear();
 			const cf = this.cfResolver.resolveComponentFactory(PageComponents.find(component => component.ref === this.pagedata.template));
 			const component = this.vcRef.createComponent(cf);
-			component.instance['pagecontent'] = this.pagedata.pagecontent;
+			component.instance['containers'] = this.pagedata.containers;
 		}
 	}
 }

@@ -20,7 +20,7 @@ export class GenericContentDirective {
       this.vcRef.clear();
       const cf = this.cfResolver.resolveComponentFactory(ContentComponents.find(contentcomponent => contentcomponent.ref === this.contentdata.contenttype));
       const component = this.vcRef.createComponent(cf);
-      component.instance['content'] = this.contentdata;
+      component.instance['componentcontent'] = this.contentdata.content;
     }
   }
 }

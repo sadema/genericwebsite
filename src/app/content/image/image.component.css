@@ -1,0 +1,10 @@
+#Header {
+  position: relative;
+}
+
+image #text {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  color: white;
+}

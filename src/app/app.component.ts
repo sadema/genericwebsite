@@ -5,16 +5,18 @@ import {Observable} from "rxjs";
 @Component({
   selector: 'app-root',
   template: `
+<!--
 		<ul class="navigation">
 			<li *ngFor="let page of pages"><a [routerLink]="page.link">{{page.text}}</a></li>
-		</ul>
+		</ul> -->
 
-		<ul class="navigation">
-		  <li *ngFor="let page of pagesObservable | async"><a [routerLink]="page.id">{{page.value.text}}</a></li>
+		<ul class="nav justify-content-center">
+		  <li class="nav-item" *ngFor="let page of pagesObservable | async"><a class="nav-link" [routerLink]="page.id">{{page.value.text}}</a></li>
     </ul>
     
-		<router-outlet></router-outlet>
-
+    <div class="container-fluid">
+		  <router-outlet></router-outlet>
+    </div>
   `,
 })
 export class AppComponent implements OnInit {
