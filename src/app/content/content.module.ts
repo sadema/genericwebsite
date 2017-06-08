@@ -12,8 +12,7 @@ export const ContentComponents = [
 @NgModule({
   declarations: [
     GenericContentDirective,
-    ...ContentComponents,
-    ImageComponent
+    ...ContentComponents
   ],
   imports: [
     CommonModule

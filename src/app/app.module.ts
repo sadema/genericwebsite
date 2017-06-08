@@ -12,6 +12,7 @@ import { CommerceModule } from './commerce/commerce.module';
 import {AppService} from "./app.service";
 import {PageContentService} from "./pages/page-content.service";
 import {ContentModule} from "./content/content.module";
+import {ContainerModule} from "./container/container.module";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {ContentModule} from "./content/content.module";
   	routing,
 
   	PagesModule,
+    ContainerModule,
     ContentModule,
   	SpotsModule,
 

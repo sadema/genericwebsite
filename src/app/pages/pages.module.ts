@@ -15,6 +15,7 @@ import {CommerceModule} from '../commerce/commerce.module';
 import {SpotsModule} from '../spots/spots.module';
 import { DefaultpageComponent } from './defaultpage/defaultpage.component';
 import {ContentModule} from "../content/content.module";
+import {ContainerModule} from "../container/container.module";
 
 
 export const PageComponents = [
@@ -30,7 +31,7 @@ export {PageComponent} from './page.component';
 		...PageComponents,
 	],
 	imports:[
-    ContentModule,
+    ContainerModule,
 		SharedModule,
 		CommerceModule,
 		SpotsModule
