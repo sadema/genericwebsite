@@ -3,7 +3,6 @@ import {Component, OnInit, Input} from '@angular/core';
 @Component({
   selector: 'card',
   template: `
-    <div class="card">
       <div class="card-block">
         <h4 class="card-title">{{componentcontent['card-title']}}</h4>
         <h6 class="card-subtitle mb-2 text-muted">{{componentcontent['card-subtitle']}}</h6>
@@ -11,7 +10,6 @@ import {Component, OnInit, Input} from '@angular/core';
         <a href="#" class="card-link">Card link</a>
         <a href="#" class="card-link">Another link</a>
       </div>
-    </div>
   `,
   styleUrls: ['./card.component.css']
 })
