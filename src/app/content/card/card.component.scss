@@ -1,0 +1,13 @@
+$card-border-radius: 0;
+
+.card {
+  border-radius: $card-border-radius;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+card > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

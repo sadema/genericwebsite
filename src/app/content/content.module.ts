@@ -3,16 +3,18 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
 import {GenericContentDirective} from "./generic-content.directive";
 import { ImageComponent } from './image/image.component';
+import { TextComponent } from './text/text.component';
 
 export const ContentComponents = [
   CardComponent,
-  ImageComponent
+  ImageComponent,
+  TextComponent
   ];
 
 @NgModule({
   declarations: [
     GenericContentDirective,
-    ...ContentComponents
+    ...ContentComponents,
   ],
   imports: [
     CommonModule

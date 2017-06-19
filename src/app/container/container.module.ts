@@ -4,16 +4,18 @@ import {HeaderContainerComponent} from "./header-container/header-container.comp
 import {CardgroupContainerComponent} from "./cardgroup-container/cardgroup-container.component";
 import { GenericContainerDirective } from './generic-container.directive';
 import {ContentModule} from "../content/content.module";
+import {DefaultContainerComponent} from "./default-container/default-container.component";
 
 export const ContainerComponents  = [
   HeaderContainerComponent,
-  CardgroupContainerComponent
+  CardgroupContainerComponent,
+  DefaultContainerComponent
 ];
 
 @NgModule({
   declarations: [
     ...ContainerComponents,
-    GenericContainerDirective
+    GenericContainerDirective,
   ],
   imports: [
     ContentModule,

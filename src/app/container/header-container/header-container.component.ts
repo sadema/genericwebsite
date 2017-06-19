@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
-  selector: 'app-header-container',
+  selector: 'header-container',
   template: `
       <div class="p-0" *ngFor="let content of containerdata.content">
         <div generic-content [contentdata]="content"></div>

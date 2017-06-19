@@ -1,0 +1,11 @@
+.card {
+  border-radius: 0;
+  border-top: 0;
+  border-bottom: 0; }
+
+card > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*# sourceMappingURL=card.component.css.map */
