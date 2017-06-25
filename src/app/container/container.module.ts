@@ -5,11 +5,13 @@ import {CardgroupContainerComponent} from "./cardgroup-container/cardgroup-conta
 import { GenericContainerDirective } from './generic-container.directive';
 import {ContentModule} from "../content/content.module";
 import {DefaultContainerComponent} from "./default-container/default-container.component";
+import { GridContainerComponent } from './grid-container/grid-container.component';
 
 export const ContainerComponents  = [
   HeaderContainerComponent,
   CardgroupContainerComponent,
-  DefaultContainerComponent
+  DefaultContainerComponent,
+  GridContainerComponent,
 ];
 
 @NgModule({
