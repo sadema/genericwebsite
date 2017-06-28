@@ -4,11 +4,13 @@ import { CardComponent } from './card/card.component';
 import {GenericContentDirective} from "./generic-content.directive";
 import { ImageComponent } from './image/image.component';
 import { TextComponent } from './text/text.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const ContentComponents = [
   CardComponent,
   ImageComponent,
-  TextComponent
+  TextComponent,
+  ProfileComponent
   ];
 
 @NgModule({
