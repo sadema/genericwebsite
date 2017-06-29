@@ -3,6 +3,7 @@
 
 .profile-img {
   width: 150px;
-  margin-top: -70px; }
+  margin-top: -70px;
+  border: white solid medium; }
 
 /*# sourceMappingURL=profile.component.css.map */

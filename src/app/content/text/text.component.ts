@@ -1,7 +1,7 @@
 import {Component, HostBinding, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-text',
+  selector: 'text',
   template: `
     <div class="mb-md-4 pt-5 pb-5" [ngClass]="{'bg-faded': componentcontent.metadata.faded}">
     <div class="pl-3 pr-3">
@@ -21,7 +21,7 @@ export class TextComponent implements OnInit {
   @Input()
   public componentcontent;
 
-  private img: image = {url: "", alt: ""};
+  private img:image;
 
   constructor() { }
 

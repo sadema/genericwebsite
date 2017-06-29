@@ -10,7 +10,7 @@ import {Component, HostBinding, Input, OnInit} from '@angular/core';
   styleUrls: ['./default-container.component.css']
 })
 export class DefaultContainerComponent implements OnInit {
-  // @HostBinding('attr.class') cssClass = 'mt-md-4 mb-md-4 pt-5 pb-5';
+  @HostBinding('attr.class') cssClass;
   static ref = 'DefaultContainer';
 
   @Input()
@@ -19,6 +19,9 @@ export class DefaultContainerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    let container_class: string = this.containerdata.metadata.class;
+    let justify_class:string = this.containerdata.metadata.justify;
+    this.cssClass = `${container_class} ${justify_class}`;
   }
 
 }

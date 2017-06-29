@@ -5,12 +5,14 @@ import {GenericContentDirective} from "./generic-content.directive";
 import { ImageComponent } from './image/image.component';
 import { TextComponent } from './text/text.component';
 import { ProfileComponent } from './profile/profile.component';
+import { JumbotronComponent } from './jumbotron/jumbotron.component';
 
 export const ContentComponents = [
   CardComponent,
   ImageComponent,
   TextComponent,
-  ProfileComponent
+  ProfileComponent,
+  JumbotronComponent
   ];
 
 @NgModule({

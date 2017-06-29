@@ -10,7 +10,7 @@ import {Component, OnInit, Input, HostBinding} from '@angular/core';
   styleUrls: ['./cardgroup-container.component.css']
 })
 export class CardgroupContainerComponent implements OnInit {
-  @HostBinding('attr.class') cssClass = 'card-group';
+  @HostBinding('attr.class') cssClass:string;
   static ref = "CardgroupContainer";
 
   @Input()
@@ -19,6 +19,7 @@ export class CardgroupContainerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.cssClass = this.containerdata.metadata.class;
   }
 
 }
