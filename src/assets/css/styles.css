@@ -2,6 +2,9 @@
 @import url("../../app/content/image/image.component.css");
 @import url("../../app/container/cardgroup-container/cardgroup-container.component.css");
 @import url("../../app/content/card/card.component.css");
+@import url("../../app/content/profile/profile.component.css");
+@import url("../../app/container/default-container/default-container.component.css");
+@import url("../../app/container/grid-container/grid-container.component.css");
 
 body {
   /*background-image: url("assets/img/meditation-rocks.jpg");*/

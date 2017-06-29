@@ -5,7 +5,7 @@ import {Component, OnInit, Input} from '@angular/core';
   template: `
     <img *ngIf="img.url" class="card-img-top" src="{{img.url}}" alt="{{img.alt}}">
       <div class="card-block">
-        <h4 class="card-title">{{componentcontent['cad-title']}}</h4>
+        <h4 class="card-title">{{componentcontent['card-title']}}</h4>
         <h6 class="card-subtitle mb-2 text-muted">{{componentcontent['card-subtitle']}}</h6>
         <p class="card-text">{{componentcontent['card-text']}}</p>
         <!-- <a href="#" class="card-link">Card link</a>
