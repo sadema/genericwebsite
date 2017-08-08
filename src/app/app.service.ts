@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Http} from "@angular/http";
+import {environment} from "../environments/environment";
 
 @Injectable()
 export class AppService {
@@ -8,7 +9,7 @@ export class AppService {
   }
 
   get pages() {
-    return this.http.get("http://localhost:6905/genericwebsite/_design/pages/_view/default")
+    return this.http.get(`${environment.databaseurl}/genericwebsite/_design/pages/_view/default`)
       .map((resp) => resp.json())
       .map((data) => data.rows);
   }

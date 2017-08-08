@@ -9,6 +9,7 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/do';
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class PageResolve implements Resolve<any> {
@@ -17,7 +18,7 @@ export class PageResolve implements Resolve<any> {
 
   public resolveUrl(url:string) {
     console.log(url);
-    return this.http.get("http://localhost:6905/genericwebsite" + url)
+    return this.http.get(`${environment.databaseurl}/genericwebsite${url}`)
       .map((resp) => resp.json())
       .do((data) => console.log(data));
 // console.log('http://www.json-generator.com/api/json/get'+url);

@@ -32,9 +32,9 @@ export class AppComponent implements OnInit {
 
 	ngOnInit() {
 	  this.pagesObservable = this.appService.pages;
-      // .subscribe((pages) => {
-	   //    console.log(pages);
-      // });
+    this.pagesObservable.subscribe((pages) => {
+	       console.log(pages);
+       });
   }
 }
 
