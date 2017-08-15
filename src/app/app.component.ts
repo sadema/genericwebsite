@@ -12,7 +12,7 @@ import {Observable} from "rxjs";
     <a class="navbar-brand" href="#">Inspiratie voor jou!</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" *ngFor="let page of pagesObservable | async"><a class="nav-link" [routerLink]="page.id">{{page.value.text}}</a></li>
+      <li class="nav-item" *ngFor="let page of pagesObservable | async"><a class="nav-link" [routerLink]="page.value.url_id">{{page.value.text}}</a></li>
     </ul>
     </div>
   </nav>

@@ -5,7 +5,7 @@ import {PageComponent} from './pages/pages.module';
 
 const appRoutes: Routes = [
   {
-    path: '**',
+    path: ':mainbar',
     component: PageComponent
   }
 ];

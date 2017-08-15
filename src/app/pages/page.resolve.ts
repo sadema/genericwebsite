@@ -17,8 +17,10 @@ export class PageResolve implements Resolve<any> {
   constructor(private http: Http, private cacheService: CacheService) { }
 
   public resolveUrl(url:string) {
-    console.log(url);
-    return this.http.get(`${environment.databaseurl}/genericwebsite${url}`)
+    console.log(`Resolve url: ${url}`);
+    let page = url.slice(1, url.length - 1);
+    console.log(page);
+    return this.http.get(`${environment.databaseurl}/genericwebsite/_design/pages/_view/url?startkey=%22${page}%22`)
       .map((resp) => resp.json())
       .do((data) => console.log(data));
 // console.log('http://www.json-generator.com/api/json/get'+url);

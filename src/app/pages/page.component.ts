@@ -24,7 +24,8 @@ export class PageComponent {
 				return this.pageResolve.resolveUrlSegment(urlseg);
 			})
 			.subscribe(data => {
-				this.pageData = data;
+				this.pageData = data.rows[0].value;
+				console.log(this.pageData);
 			//	document.title = this.pageData.title + ' - NG2 spa-POC';
 			});
 
