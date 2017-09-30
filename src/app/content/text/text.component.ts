@@ -7,7 +7,7 @@ import {Component, HostBinding, Input, OnInit} from '@angular/core';
     <div class="pl-3 pr-3">
     <h1>{{componentcontent.title}}</h1>
     <h4 class="pt-2 pb-2">{{componentcontent.subtitle}}</h4>
-    <p [innerHTML]="componentcontent.text"></p>
+    <p *ngFor="let text of componentcontent.text" [innerHTML]="text.paragraph"></p>
     </div>
     <img *ngIf="img?.url" class="img-fluid" src="{{img.url}}" alt="{{img.alt}}">
     </div>
