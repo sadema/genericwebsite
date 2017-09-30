@@ -23,16 +23,6 @@ export class PageResolve implements Resolve<any> {
     return this.http.get(`${environment.databaseurl}/genericwebsite/_design/pages/_view/url?startkey=%22${page}%22`)
       .map((resp) => resp.json())
       .do((data) => console.log(data));
-// console.log('http://www.json-generator.com/api/json/get'+url);
-//     if(this.cacheService.get(url)) {
-//       return Observable.of(this.cacheService.get(url));
-//     }
-//
-//     return this.http.get('http://www.json-generator.com/api/json/get'+url)
-//       .map(response=> response.json())
-//       .do(data => {
-//         this.cacheService.set(url,data);
-//       });
   }
 
 
