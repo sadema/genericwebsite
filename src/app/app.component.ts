@@ -23,31 +23,12 @@ import {Observable} from "rxjs";
   `,
 })
 export class AppComponent implements OnInit {
-	pages:any[];
 	pagesObservable: Observable<any[]>;
 
 	constructor(private appService:AppService) {
-		this.pages = pages;
 	}
 
 	ngOnInit() {
 	  this.pagesObservable = this.appService.pages;
-    this.pagesObservable.subscribe((pages) => {
-	       console.log(pages);
-       });
   }
 }
-
-export const pages = [{
-		text:'Forside',
-		link:'bICCgfCphK'
-	},{
-		text:'Underside 1',
-		link:'bNWdVLeJOW'
-	},{
-		text:'Underside 2',
-		link:'coDQrWQZxK'
-	},{
-		text:'Produkter',
-		link:'bUGgYdIhQi'
-	}];
