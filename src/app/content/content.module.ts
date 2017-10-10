@@ -6,8 +6,10 @@ import { ImageComponent } from './image/image.component';
 import { TextComponent } from './text/text.component';
 import { ProfileComponent } from './profile/profile.component';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
+import { DefaultComponent } from './default/default.component';
 
 export const ContentComponents = [
+  DefaultComponent,
   CardComponent,
   ImageComponent,
   TextComponent,

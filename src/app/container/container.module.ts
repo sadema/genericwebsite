@@ -6,8 +6,10 @@ import { GenericContainerDirective } from './generic-container.directive';
 import {ContentModule} from "../content/content.module";
 import {DefaultContainerComponent} from "./default-container/default-container.component";
 import { GridContainerComponent } from './grid-container/grid-container.component';
+import { StackContainerComponent } from './stack-container/stack-container.component';
 
 export const ContainerComponents  = [
+  StackContainerComponent,
   HeaderContainerComponent,
   CardgroupContainerComponent,
   DefaultContainerComponent,

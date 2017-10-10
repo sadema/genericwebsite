@@ -20,7 +20,12 @@ export class GenericContentDirective {
       this.vcRef.clear();
       const cf = this.cfResolver.resolveComponentFactory(ContentComponents.find(contentcomponent => contentcomponent.ref === this.contentdata.contenttype));
       const component = this.vcRef.createComponent(cf);
-      component.instance['componentcontent'] = this.contentdata.content;
+      if (typeof(this.contentdata.content) !== 'undefined') {   // TODO Sjoerd: oude structuur. Verwijderen na conversie
+        component.instance['componentcontent'] = this.contentdata.content;
+      }
+      else {
+        component.instance['componentcontent'] = this.contentdata.contentitem;
+      }
     }
   }
 }
