@@ -1,8 +1,11 @@
 import {Directive, Input, ComponentFactoryResolver, ViewContainerRef} from '@angular/core';
 import {ContentComponents} from "./content.module";
+import {ContentService} from "./content.service";
+import {Observable} from "rxjs/Observable";
 
 @Directive({
-  selector: '[generic-content]'
+  selector: '[generic-content]',
+  providers: [ContentService]
 })
 export class GenericContentDirective {
 
@@ -11,11 +14,13 @@ export class GenericContentDirective {
 
   constructor(
     private vcRef: ViewContainerRef,
-    private cfResolver: ComponentFactoryResolver
+    private cfResolver: ComponentFactoryResolver,
+    private contentService: ContentService
   ) { }
 
   ngOnChanges(changes) {
     console.log("generic content change");
+//    console.log(this.contentdata);
     if(this.contentdata) {
       this.vcRef.clear();
       const cf = this.cfResolver.resolveComponentFactory(ContentComponents.find(contentcomponent => contentcomponent.ref === this.contentdata.contenttype));
@@ -24,7 +29,10 @@ export class GenericContentDirective {
         component.instance['componentcontent'] = this.contentdata.content;
       }
       else {
-        component.instance['componentcontent'] = this.contentdata.contentitem;
+        console.log(this.contentdata);
+        this.contentService.getContent(this.contentdata.contentitem.contentlink).subscribe(data => {
+          component.instance['componentcontent'] = data;
+        })
       }
     }
   }
