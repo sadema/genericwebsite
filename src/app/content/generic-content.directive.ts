@@ -20,7 +20,6 @@ export class GenericContentDirective {
 
   ngOnChanges(changes) {
     console.log("generic content change");
-//    console.log(this.contentdata);
     if(this.contentdata) {
       this.vcRef.clear();
       const cf = this.cfResolver.resolveComponentFactory(ContentComponents.find(contentcomponent => contentcomponent.ref === this.contentdata.contenttype));
@@ -31,6 +30,8 @@ export class GenericContentDirective {
       else {
         console.log(this.contentdata);
         this.contentService.getContent(this.contentdata.contentitem.contentlink).subscribe(data => {
+          // component.instance['componentcontent'] = data;
+          console.log(data);
           component.instance['componentcontent'] = data;
         })
       }
