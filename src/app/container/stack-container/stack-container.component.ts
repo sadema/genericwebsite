@@ -4,7 +4,7 @@ import {Component, Input, OnInit} from '@angular/core';
   selector: 'stack-container',
   template: `
     <div *ngFor="let content of containerdata.content">
-      <div generic-content [contentdata]="content"></div>
+      <div generic-content [contentdata]="content" [metadata]="content.metadata"></div>
     </div>
 
   `,
@@ -19,6 +19,7 @@ export class StackContainerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.containerdata);
   }
 
 }

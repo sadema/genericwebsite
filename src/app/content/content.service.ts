@@ -10,7 +10,7 @@ export class ContentService {
   getContent(contentid: string) {
     return this.http.get(`${environment.databaseurl}/genericwebsite/${contentid}`)
       .map((resp) => resp.json())
-      // .map(data => data.content)
+      .map(data => data.content)
   }
 }
 

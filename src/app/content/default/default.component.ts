@@ -7,11 +7,11 @@ import {Subject} from "rxjs/Subject";
 @Component({
   selector: 'default',
   template: `
-    <div class="mb-md-4 pt-5 pb-5" [ngClass]="{'bg-faded': componentcontent.metadata?.faded}">
+    <div class="mb-md-4 pt-5 pb-5" [ngClass]="{'bg-faded': metadata?.faded}">
       <div class="pl-3 pr-3">
-        <h1>{{componentcontent.content?.title}}</h1>
-        <h4 class="pt-2 pb-2">{{componentcontent.content?.subtitle}}</h4>
-        <p *ngFor="let text of componentcontent.content?.text" [innerHTML]="text.paragraph"></p>
+        <h1>{{componentcontent.data?.title}}</h1>
+        <h4 class="pt-2 pb-2">{{componentcontent.data?.subtitle}}</h4>
+        <p *ngFor="let text of componentcontent.data?.text" [innerHTML]="text.paragraph"></p>
       </div>
     </div>
     <!--
@@ -30,6 +30,9 @@ export class DefaultComponent implements OnInit {
 
   @Input()
   public componentcontent: Subject<any> = new Subject();
+
+  @Input()
+  public metadata;
 
   public defaultdata;
 

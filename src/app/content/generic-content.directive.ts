@@ -1,7 +1,6 @@
-import {Directive, Input, ComponentFactoryResolver, ViewContainerRef} from '@angular/core';
+import {ComponentFactoryResolver, Directive, Input, ViewContainerRef} from '@angular/core';
 import {ContentComponents} from "./content.module";
 import {ContentService} from "./content.service";
-import {Observable} from "rxjs/Observable";
 
 @Directive({
   selector: '[generic-content]',
@@ -11,6 +10,9 @@ export class GenericContentDirective {
 
   @Input()
   public contentdata;
+
+  @Input()
+  public metadata;
 
   constructor(
     private vcRef: ViewContainerRef,
@@ -29,10 +31,15 @@ export class GenericContentDirective {
       }
       else {
         console.log(this.contentdata);
+        component.instance['metadata'] = this.metadata;
         this.contentService.getContent(this.contentdata.contentitem.contentlink).subscribe(data => {
-          // component.instance['componentcontent'] = data;
           console.log(data);
-          component.instance['componentcontent'] = data;
+          if (this.contentdata.img) {
+            component.instance['componentcontent'] = {data: data, img: this.contentdata.img};
+          }
+          else {
+            component.instance['componentcontent'] = {data: data};
+          }
         })
       }
     }
