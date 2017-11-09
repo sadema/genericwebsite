@@ -14,7 +14,7 @@ import {Subject} from "rxjs/Subject";
       <h6 class="card-subtitle mb-2 text-muted">{{componentcontent['card-subtitle']}}</h6>
       <p class="card-text">{{componentcontent['card-text']}}</p> -->
 
-      <a href="#" class="card-link">Lees meer</a>
+      <a *ngIf="componentcontent.link?.url" href="{{componentcontent.link?.url}}" class="card-link">{{componentcontent.link?.text}}</a>
       <!-- <a href="#" class="card-link">Another link</a> -->
     </div>
   `,

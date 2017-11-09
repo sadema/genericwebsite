@@ -34,12 +34,21 @@ export class GenericContentDirective {
         component.instance['metadata'] = this.metadata;
         this.contentService.getContent(this.contentdata.contentitem.contentlink).subscribe(data => {
           console.log(data);
+          let constructedData = {"data": null, "img": null, "link": null};
+          constructedData.data = data;
           if (this.contentdata.img) {
-            component.instance['componentcontent'] = {data: data, img: this.contentdata.img};
+            constructedData.img = this.contentdata.img;
           }
-          else {
-            component.instance['componentcontent'] = {data: data};
+          if (this.contentdata.link) {
+            constructedData.link = this.contentdata.link;
           }
+          component.instance['componentcontent'] = constructedData;
+          // if (this.contentdata.img) {
+          //   component.instance['componentcontent'] = {data: data, img: this.contentdata.img};
+          // }
+          // else {
+          //   component.instance['componentcontent'] = {data: data};
+          // }
         })
       }
     }
