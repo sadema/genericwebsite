@@ -13,7 +13,7 @@ import {Component, OnInit, Input} from '@angular/core';
 })
 export class ImageComponent implements OnInit {
 
-  static ref = 'Image'
+  static ref = 'image'
 
   @Input()
   public componentcontent;

@@ -3,8 +3,8 @@ import {Component, HostBinding, Input, OnInit} from '@angular/core';
 @Component({
   selector: 'grid-container',
   template: `
-      <div *ngFor="let col of containerdata.content" [style.flex]="col.content.metadata.flex" [ngClass]="col.content.metadata.class">
-        <div generic-content [contentdata]="col"></div>
+      <div *ngFor="let content of containerdata.content" [style.flex]="content.metadata?.flex" [ngClass]="content.metadata?.class">
+        <div generic-content [contentdata]="content" [metadata]="content.metadata"></div>
       </div>
   `,
   styleUrls: ['./grid-container.component.css']
@@ -12,7 +12,7 @@ import {Component, HostBinding, Input, OnInit} from '@angular/core';
 export class GridContainerComponent implements OnInit {
   @HostBinding('attr.class') cssClass;
 
-  public static ref:string = "GridContainer";
+  public static ref:string = "gridContainer";
 
   @Input()
   public containerdata;
