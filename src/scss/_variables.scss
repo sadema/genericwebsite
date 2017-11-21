@@ -116,7 +116,8 @@ $pretty-blue:   #0b5a8e;
 $pretty-green:  #17682f;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $blue !default;
+//$brand-primary:             $blue !default;
+$brand-primary:             $pretty-green !default;
 $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
