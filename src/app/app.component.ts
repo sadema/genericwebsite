@@ -12,7 +12,7 @@ import {Observable} from "rxjs";
     <a class="navbar-brand" href="#">Inspiratie voor jou!</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" *ngFor="let page of pagesObservable | async"><a class="nav-link" [routerLink]="page.value.url_id">{{page.value.text}}</a></li>
+      <li class="nav-item" *ngFor="let menuitem of mainmenuObservable | async"><a class="nav-link" [routerLink]="menuitem.url_id">{{menuitem.menu_text}}</a></li>
     </ul>
     </div>
   </nav>
@@ -23,12 +23,12 @@ import {Observable} from "rxjs";
   `,
 })
 export class AppComponent implements OnInit {
-	pagesObservable: Observable<any[]>;
+	mainmenuObservable: Observable<Menu[]>;
 
 	constructor(private appService:AppService) {
 	}
 
 	ngOnInit() {
-	  this.pagesObservable = this.appService.pages;
+	  this.mainmenuObservable = this.appService.pages;
   }
 }

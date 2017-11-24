@@ -5,6 +5,11 @@ import {PageComponent} from './pages/pages.module';
 
 const appRoutes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/home'
+  },
+  {
     path: ':mainbar',
     component: PageComponent
   }

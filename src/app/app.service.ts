@@ -9,9 +9,10 @@ export class AppService {
   }
 
   get pages() {
-    return this.http.get(`${environment.databaseurl}/genericwebsite/_design/pages/_view/default`)
+    return this.http.get(`${environment.databaseurl}/genericwebsite/_design/mainmenu/_view/mainmenu`)
       .map((resp) => resp.json())
-      .map((data) => data.rows);
+      .map((data) => data.rows[0].value)
+      .map(data => data.content)
   }
 
 }
