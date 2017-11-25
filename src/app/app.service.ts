@@ -9,7 +9,7 @@ export class AppService {
   }
 
   get pages() {
-    return this.http.get(`${environment.databaseurl}/genericwebsite/_design/mainmenu/_view/mainmenu`)
+    return this.http.get(`${environment.databaseurl}/genericwebsite/_design/navigation/_view/mainmenu`)
       .map((resp) => resp.json())
       .map((data) => data.rows[0].value)
       .map(data => data.content)
